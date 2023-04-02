@@ -1,0 +1,39 @@
+
+// Imports ---- 
+@import "../../scss//variables";
+@import  url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+
+
+@font-face {
+    font-family: Tajwal;
+    src: url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
+}
+// Imports ---- 
+
+
+// Navbar and Header Styles -----
+header{
+    background: $primaryBg;
+    direction: rtl;
+    color: white;
+}
+nav{
+    font-weight:800 !important;
+
+}
+.dropdown-item{
+    font-weight: 700 !important;
+}
+.nav-link{
+    font-size: 1.1rem;
+}
+.active{
+    color: $primaryColor;
+}
+.nav-item:hover{
+    color: $primaryColor !important;
+}
+.dropdown-menu{
+    color: $primaryColor;
+}
+// Navbar Styles -----
