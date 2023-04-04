@@ -21,10 +21,10 @@
       </button>
       <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavDropdown">
         <ul class="navbar-nav">
-          <li class="nav-item px-4">
-            <a class="nav-link" routerLink="home" routerLinkActive="active">الرئيسية</a>
+          <li class="nav-item px-4" *ngFor="let item of navbarItems">
+            <a class="nav-link" [routerLink]="item.componentName" routerLinkActive="active">{{item.text}}</a>
           </li>
-          <li class="nav-item px-4 dropdown">
+          <!-- <li class="nav-item px-4 dropdown">
             <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               من نحن
             </a>
@@ -64,7 +64,7 @@
           </li>
           <li class="nav-item px-4">
             <a class="nav-link" >الوظائف</a>
-          </li>
+          </li> -->
          
         </ul>
         <button class="btn primaryBg text-white px-5 py-2">طلب الشراء </button>

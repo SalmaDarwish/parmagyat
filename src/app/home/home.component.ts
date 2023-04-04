@@ -7,18 +7,21 @@ import { ServicesService } from '../services.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
+
+  navbarItems:any=[]
   constructor(private service:ServicesService) {
   }
-  getAllJobs(){
-    this.service.getAllJobs().subscribe({
+  getHome(){
+    this.service.getHome().subscribe({
       next:(data:any)=>{
-        console.log(data)
+        this.navbarItems=data.lComponentContents[0].nodes[0].nodes
+        console.log(this.navbarItems)
       }
     })
 
   }
   ngOnInit(){
-  this.getAllJobs()
+  this.getHome()
   
   }
 }
