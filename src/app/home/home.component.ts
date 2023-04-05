@@ -10,6 +10,8 @@ export class HomeComponent {
 
   navbarItems:any=[]
   constructor(private service:ServicesService) {
+    this.getHome()
+    this.getNavbar()
   }
   getHome(){
     this.service.getHome().subscribe({
@@ -20,8 +22,17 @@ export class HomeComponent {
     })
 
   }
+  getNavbar(){
+    this.service.getComponent("navbar").subscribe({
+      next:(data:any)=>{
+        this.navbarItems=data.lComponentContents[0].nodes[0].nodes
+        console.log(this.navbarItems[1].nodes)
+      }
+    })
+
+  }
   ngOnInit(){
-  this.getHome()
+
   
   }
 }
