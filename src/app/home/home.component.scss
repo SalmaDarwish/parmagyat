@@ -17,10 +17,7 @@ header{
     direction: rtl;
     color: white;
 }
-nav{
-    font-weight:800 !important;
 
-}
 .dropdown-item{
     font-weight: 700 !important;
 }
@@ -37,3 +34,7 @@ nav{
     color: $primaryColor;
 }
 // Navbar Styles -----
+
+.header-icon{
+    width: 2%;
+}

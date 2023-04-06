@@ -9,12 +9,18 @@ import { ServicesService } from '../services.service';
 export class HomeComponent {
 
   navbarItems:any=[]
+  heroSection:any=[]
+  whoWeAre:any=[]
+  section1:any=[]
   constructor(private service:ServicesService) {
-    this.getHome()
     this.getNavbar()
+    this.getHeroSection()
+    this.getWhoWeAre()
+    this.getSection1()
   }
-  getHome(){
-    this.service.getHome().subscribe({
+  
+  getNavbar(){
+    this.service.getComponent("navbar").subscribe({
       next:(data:any)=>{
         this.navbarItems=data.lComponentContents[0].nodes[0].nodes
         console.log(this.navbarItems)
@@ -22,11 +28,29 @@ export class HomeComponent {
     })
 
   }
-  getNavbar(){
-    this.service.getComponent("navbar").subscribe({
+  getHeroSection(){
+    this.service.getComponent("hero-section").subscribe({
       next:(data:any)=>{
-        this.navbarItems=data.lComponentContents[0].nodes[0].nodes
-        console.log(this.navbarItems[1].nodes)
+        this.heroSection=data.lComponentContents[0].nodes
+        console.log(this.heroSection)
+      }
+    })
+
+  }
+  getWhoWeAre(){
+    this.service.getComponent("who-we-are").subscribe({
+      next:(data:any)=>{
+        this.whoWeAre=data.lComponentContents[0].nodes
+        console.log(this.whoWeAre)
+      }
+    })
+
+  }
+  getSection1(){
+    this.service.getComponent("section1").subscribe({
+      next:(data:any)=>{
+        this.section1=data.lComponentContents[0].nodes
+        console.log(this.section1)
       }
     })
 
