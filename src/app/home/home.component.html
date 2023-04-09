@@ -76,7 +76,7 @@
   </div>
 
   </main> 
-  <div class="who-we-are mb-5" *ngIf="whoWeAre && whoWeAre.length >0" >
+  <section class="who-we-are mb-5" *ngIf="whoWeAre && whoWeAre.length >0" >
       <div class="d-flex justify-content-center mx-0 position-relative  pt-5">
         <h3 class="text-center fs-3">{{whoWeAre[0].nodes[0].text}}</h3>
         <img  class="position-absolute header-icon" [src]="whoWeAre[0].nodes[1].displayPath" style="left:38%">
@@ -91,10 +91,10 @@
         </div>
 
       </div>
-  </div>
+    </section>
 
-  <section *ngIf="section1 && section1.length > 0" >
-    <div class="d-flex justify-content-center mx-0 position-relative  pt-5">
+  <section *ngIf="section1 && section1.length > 0" class="mb-5">
+    <div class="d-flex justify-content-center  mx-0 position-relative  pt-5">
       <h3 class="text-center fs-3">{{section1[0].nodes[0].text}}</h3>
       <img  class="position-absolute header-icon" [src]="section1[0].nodes[1].displayPath" style="left:38%">
       <img  class="position-absolute header-icon" [src]="section1[0].nodes[2].displayPath" style="right:38%">
@@ -113,4 +113,66 @@
       
 
     </div>
+  </section>
+  <section *ngIf="section2 && section2.length > 0"  class="mb-5" >
+    <div class="container">
+       <div class="d-flex justify-content-center mx-0 position-relative  pt-5">
+      <h3 class="text-center fs-3">{{section2[0].nodes[0].text}}</h3>
+      <img  class="position-absolute header-icon" [src]="section2[0].nodes[1].displayPath" style="left:38%">
+      <img  class="position-absolute header-icon" [src]="section2[0].nodes[2].displayPath" style="right:38%">
+    </div>
+    <div class="d-flex flex-column mb-5 align-items-center">
+      <p class="mt-5 pt-2  text-center w-50">{{section2[1].nodes[0].text}}</p>
+      <button class="btn ms-5 primaryBg text-white px-5 w-auto  py-2">{{section2[2].nodes[0].text}}</button>
+
+
+    </div>
+    <div class="d-flex row mx-5">
+      <div class="col-md-4  py-3 "*ngFor="let box of boxes">
+        <div class="box multi-border  py-4  d-flex flex-column align-items-center">
+ <img  [src]="box.nodes[0].displayPath">
+        <p class="fw-bold mt-3"> {{box.nodes[1].text}}</p>
+        <p class="text-center mx-5">    {{box.nodes[2].text}}  </p>
+        </div>
+       
+      </div>
+    </div>
+    </div>
+   
+  </section>
+  <!-- <section *ngIf="section3 && section3.length > 0"  class="mb-5" >
+       <div class="d-flex justify-content-center mx-0 mb-5 position-relative  pt-5">
+      <h3 class="text-center fs-3">{{section3[0].nodes[0].text}}</h3>
+      <img  class="position-absolute header-icon" [src]="section3[0].nodes[1].displayPath" style="left:38%">
+      <img  class="position-absolute header-icon" [src]="section3[0].nodes[2].displayPath" style="right:38%">
+    </div>
+    <div class="d-flex bg-light   mt-5   position-relative justify-content-end py-5" style="z-index: 1000;">
+   
+
+
+
+      <img [src]="section1[3].nodes[0].displayPath" class="  w-100 position-absolute h-100" style="z-index: -10; top:0px; left: 0; background-position: center center; background-size: cover;" >
+      
+
+    </div>
+   
+  </section> -->
+  <section *ngIf="section4 && section4.length > 0" class="mb-5">
+    <div class="container">
+      <div class="d-flex justify-content-center mx-0 position-relative  pt-5">
+     <h3 class="text-center fs-3">{{section4[0].nodes[0].text}}</h3>
+     <img  class="position-absolute header-icon" [src]="section4[0].nodes[1].displayPath" style="left:38%">
+     <img  class="position-absolute header-icon" [src]="section4[0].nodes[2].displayPath" style="right:38%">
+   </div>
+   <div class="d-flex row mx-5 mt-5">
+    <div class="col-md-2  py-3 "*ngFor="let client of clients">
+      <div class="box multi-border justify-content-center  py-4  d-flex flex-column align-items-center" style="height: 7rem;">
+<img  [src]="client.nodes[0].displayPath" >
+
+      </div>
+     
+    </div>
+  </div>
+ 
+   </div>
   </section>

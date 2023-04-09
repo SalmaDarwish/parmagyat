@@ -5,6 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
+import {BrowserAnimationsModule} from'@angular/platform-browser/animations'
+
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 
 
@@ -16,7 +19,10 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+   CarouselModule,
+   BrowserAnimationsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
